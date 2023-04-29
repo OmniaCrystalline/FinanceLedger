@@ -17,7 +17,9 @@ export const Callback = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("/", {
+    alert("form submission has been recieved");
+    reset()
+    /*fetch("/", {
       body: new FormData(data),
       method: "POST",
     })
@@ -25,7 +27,7 @@ export const Callback = () => {
         reset()
         console.log("res.message", res.message);
       })
-      .catch((err) => console.log("error.message", err.message));
+      .catch((err) => console.log("error.message", err.message));*/
   };
 
   return (
