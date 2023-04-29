@@ -1,0 +1,42 @@
+@import '../../variables.scss';
+
+.footer {
+    background: $text-color-dark;
+    color: $text-color-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110px;
+    flex-direction: column;
+    transition: color 300ms ease-in-out;
+
+    & .social_icon:hover {
+        color: $prime-color-accent;
+
+    }
+}
+
+.footer_icon_list {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 12px;
+
+    @include tablet {
+        color: $text-color-dark;
+    }
+
+    @include laptop {
+        display: flex;
+        color: $text-color-light;
+    }
+}
+
+.social_icon {
+    width: auto;
+    height: 35px;
+}
+
+.footer_span {
+    font-size: 16px;
+    line-height: 22px;
+}

@@ -1,0 +1,92 @@
+@import '../../variables.scss';
+
+.form_container {
+    display: grid;
+
+    @include tablet {
+        grid-template-columns: 1fr 1fr;
+        padding-bottom: 40px;
+    }
+
+    @include laptop {
+        padding-bottom: 0;
+    }
+}
+
+.form_image_container {
+    display: grid;
+
+    & img {
+        display: block;
+        width: 100%;
+
+        @include tablet {
+            height: 100%;
+            object-fit: none;
+        }
+    }
+}
+
+.form_image {
+    width: 100%;
+}
+
+.form_content {
+    background: #F4F4F4;
+    color: $text-color-dark;
+    padding: 51px 20px 25px 20px;
+
+    @include tablet {
+        padding: 32px;
+    }
+
+    @include laptop {
+        padding: 56px 25px 77px 25px;
+    }
+}
+
+.form {
+    display: grid;
+
+    .form_input {
+        display: block;
+
+    }
+}
+
+.form_h {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    margin-bottom: 69px;
+}
+
+.form_input {
+    padding: 16px 8px;
+    background: white;
+    border: 1px solid #F5F5F5;
+    color: #808080;
+    border-radius: 5px;
+    line-height: 23px;
+    font-size: inherit;
+
+    &:not(:last-child) {
+        margin-bottom: 16px;
+    }
+}
+
+.form_btn {
+    width: 155px;
+    margin-top: 24px;
+}
+
+
+
+.error {
+    position: absolute;
+    font-size: 16px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    transform: translate(10px, 105px);
+}

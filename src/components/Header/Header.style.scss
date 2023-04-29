@@ -1,0 +1,120 @@
+@import '../../variables.scss';
+
+.header_container {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+   
+    color: $text-color-light;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 100;
+
+    @include tablet() {
+        flex-direction: row;
+        align-items: center;
+        height: 70px;
+    }
+    @include laptop{
+        height: 70px;
+        max-width: 1360px;
+    }
+
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 28px;
+    line-height: 38px;
+    margin-left: 24px;
+    opacity: 0.8;
+    animation: all 300ms ease-in-out;
+
+    &:hover{
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    @include tablet() {
+        font-size: 35px;
+        line-height: 48px;
+        margin-left: 32px;
+    }
+
+    @include laptop() {
+        font-size: 35px;
+        line-height: 48px;
+        margin-left: 28px;
+    }
+}
+
+.finance {
+    color: $prime-color-accent;
+}
+
+.logo_icon {
+    color: $prime-color-accent;
+    width: 40px;
+}
+
+.ledger {
+    color: $text-color-light;
+}
+
+.header_links_container {
+    margin-left: 24px;
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+
+    @include tablet() {
+        gap: 20px;
+        margin-left: auto;
+        margin-top: 0;
+        margin-right: 32px;
+    }
+
+    @include laptop() {
+        gap: 43px;
+        margin-right: 28px;
+    }
+
+}
+
+.header_nav_link {
+    font-family: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+
+.scrolled {
+    background-color: rgba(0, 0, 0, 0.3);
+    //backdrop-filter: blur(5px);
+}
+
+.header_nav_link {
+    position: relative;
+}
+
+.header_nav_link:before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: orange;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.header_nav_link.active:before {
+    opacity: 1;
+}

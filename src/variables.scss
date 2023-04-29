@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+$prime-color-accent: #28A745;
+$secondary-color-accent: #0284D0;
+$text-color-light: #ffffff;
+$text-color-dark: #333333;
+$main-font: 'Open Sans', sans-serif;
+
+@mixin mobile {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (min-width: 1360px) {
+        @content;
+
+    }
+}
+
+@mixin retina {
+
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        @content;
+    }
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    line-height: 22px;
+
+    @include tablet() {
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    @include laptop() {
+        max-width: 1360px;
+    }
+}
+
+.btn {
+    padding: 16px 32px;
+    font-family: inherit;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.green_btn {
+    background: $prime-color-accent;
+    color: $text-color-light;
+    border: none;
+    transition: all 300ms ease-in-out;
+
+    &:hover,
+    &:focus {
+        background: #2EBF4F;
+    }
+}
+
+@mixin button_transparent($color, $val ) {
+    background: transparent;
+    color: $text-color-light;
+    border: $text-color-light 1px solid;
+    transition: all 300ms ease-in-out;
+
+    &:hover,
+    &:focus {
+        background: $text-color-light;
+        color: $val;
+        border-color: $val;
+    }
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.hidden {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -120px;
+
+    @include tablet {
+        top: -70px;
+    }
+}
+
+.relative {
+    position: relative;
+}
